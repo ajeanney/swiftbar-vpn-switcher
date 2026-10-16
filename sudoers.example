@@ -1,0 +1,6 @@
+# Lets the menu start and stop OpenVPN without a password prompt.
+# Replace YOUR_USER with your macOS short name (`whoami`) and the openvpn path with
+# `command -v openvpn` if it differs, then install with:
+#   sudo visudo -f /etc/sudoers.d/vpn-menubar
+YOUR_USER ALL=(ALL) NOPASSWD: /opt/homebrew/sbin/openvpn
+YOUR_USER ALL=(ALL) NOPASSWD: /usr/bin/killall -TERM openvpn

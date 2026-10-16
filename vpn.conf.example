@@ -1,0 +1,20 @@
+# Copy to vpn.conf (gitignored) and edit. This file is sourced by bash.
+#
+# One line per VPN, in menu order:
+#
+#   vpn ID ENGINE "MENUBAR TITLE" "MENU LABEL" TARGET
+#
+#   ID        short unique name, no spaces (used for state and log files)
+#   ENGINE    openvpn  TARGET = an .ovpn file, absolute or relative to this repo
+#             f5       TARGET = the F5 portal URL; it opens in your browser, you log in
+#                      there, and the portal hands off to the official F5 VPN client
+#   TITLE     shown in the menubar while this VPN is connected
+#   LABEL     the menu item
+
+vpn work-split openvpn "VPN: Work"      "Work — split tunnel"     profiles/example-split.ovpn
+vpn work-full  openvpn "VPN: Work full" "Work — full tunnel"      profiles/example-full.ovpn
+vpn client-f5  f5      "VPN: Client"    "Client — F5 VPN portal"  "https://vpn.example.com/"
+
+# Optional overrides (defaults shown):
+# OPENVPN=/opt/homebrew/sbin/openvpn      # Intel Homebrew: /usr/local/sbin/openvpn
+# F5_APP="/Applications/F5 VPN.app"
