@@ -1,0 +1,12 @@
+# Your own VPN list and profiles stay local; only the examples are published.
+vpn.conf
+profiles/*
+!profiles/example-*.ovpn
+*-creds
+*.log
+*.pid
+current-profile
+openconnect.sh.before-*
+AGENTS.local.md
+agents-*.md
+.DS_Store
